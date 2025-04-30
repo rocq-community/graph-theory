@@ -339,7 +339,7 @@ Lemma split_io_edge_lens (G : graph2) (e : edge G) :
 Proof.
   move => e_io lens_G. rewrite lens_io_set // inE in e_io. 
   rewrite /tm_. case: ifP e_io => //= [e_io _|eNio e_oi]; first exact: split_io_edge.
-  rewrite <- cnv2I. 
+  rewrite <- cnv2I at 1.
   have e_io : e \in @edges _ _ (g2_cnv G) input output by [].
   rewrite -> (split_io_edge e_io) at 1. by rewrite -> cnv2par. 
 Qed.
