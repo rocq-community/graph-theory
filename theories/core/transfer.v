@@ -1051,9 +1051,12 @@ Qed.
 
 (* TODO: why is [simple apply] unable to use the non-instantiated lemmas? *)
 (* Hint Resolve in_vsetDV in_vsetDE in_vsetAE in_vsetAV in_vsetAV' : vset. *)
-Set Warnings "-fragile-hint-constr".
-Local Hint Resolve (@in_vsetDV tm) (@in_vsetDE tm) (@in_vsetAE tm) (@in_vsetAV tm) (@in_vsetAV' tm) : vset.
-Set Warnings "+fragile-hint-constr".
+Definition in_vsetDV_tm_ := @in_vsetDV tm.
+Definition in_vsetDE_tm_ := @in_vsetDE tm.
+Definition in_vsetAV_tm_ := @in_vsetAV tm.
+Definition in_vsetAV'_tm_ := @in_vsetAV' tm.
+Definition in_vsetAE_tm_ := @in_vsetAE tm.
+Local Hint Resolve in_vsetDV_tm_ in_vsetDE_tm_ in_vsetAE_tm_ in_vsetAV_tm_ in_vsetAV'_tm_ : vset.
 
 Lemma expand_isolated (G : pre_graph) (z : VT) (isG : is_graph G) (isH : is_graph (G \ z)) :
     z \in vset G -> edges_at G z = fset0 -> pack G ≃2 pack (G \ z) ∔ lv G z.
