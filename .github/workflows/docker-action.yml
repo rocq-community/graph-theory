@@ -18,6 +18,7 @@ jobs:
       matrix:
         image:
           - 'mathcomp/mathcomp-dev:rocq-prover-dev'
+          - 'mathcomp/mathcomp:2.4.0-rocq-prover-9.0'
           - 'mathcomp/mathcomp:2.2.0-coq-8.20'
           - 'mathcomp/mathcomp:2.1.0-coq-8.18'
       fail-fast: false
