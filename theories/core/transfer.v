@@ -663,11 +663,11 @@ Proof.
     - case => /= x. rewrite inE => Hx ->. exists (fsval x) => //. by rewrite efun_bodyE fsvalK. }
   - have @P e (p : e \in eset (F \ z)) : val (i.e (Sub e (fsetDl p))) \in eset G `\` edges_at G (vfun_body i z).
     { rewrite inE [_ \in eset G]valP andbT E2. apply: contraTN (p).
-      case/imfsetP => /= e0. rewrite inE => A. move/val_inj. move/(@bij_injective _ _ i.e) => ?; subst.
+      case/imfsetP => /= e0. rewrite [in X in X -> _]inE => A. move/val_inj. move/(@bij_injective _ _ i.e) => ?; subst.
       by rewrite inE A. }
     have @Q v (p : v \in vset (F \ z)) : val (i (Sub v (fsetDl p))) \in vset G `\ vfun_body i z.
     { rewrite inE [_ \in vset G]valP andbT E1. apply: contraTN (p).
-      case/imfsetP => /= v0. rewrite inE => A. move/val_inj. move/(@bij_injective _ _ i) => ?; subst.
+      case/imfsetP => /= v0. rewrite [in X in X -> _]inE => A. move/val_inj. move/(@bij_injective _ _ i) => ?; subst.
       by rewrite inE A. }
     iso2 (fsetD_bij (f := i) E1) (fsetD_bij (f := i.e) E2) (fun k => i.d (Sub (val k) (fsetDl (valP k)))). 
     + split. 
@@ -736,7 +736,7 @@ Proof.
     - case => /= x. rewrite inE => Hx ->. exists (fsval x) => //. by rewrite efun_bodyE fsvalK. }
   have @P e (p : e \in eset (F - E)) : val (i.e (Sub e (fsetDl p))) \in eset G `\` E'.
   { rewrite inE [_ \in eset G]valP andbT X. apply: contraTN (p).
-    case/imfsetP => /= e0. rewrite inE => A. move/val_inj. move/(@bij_injective _ _ i.e) => ?; subst.
+    case/imfsetP => /= e0. rewrite [in X in X -> _]inE => A. move/val_inj. move/(@bij_injective _ _ i.e) => ?; subst.
     by rewrite inE A. }
   iso2 i (fsetD_bij (f := i.e) X) (fun k => i.d (Sub (val k) (fsetDl (valP k)))).
   - split. (* the edge part is essentially the same as for del-vertex *)
