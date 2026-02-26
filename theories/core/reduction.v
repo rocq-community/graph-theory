@@ -4,6 +4,7 @@ From mathcomp Require Import all_ssreflect.
 From GraphTheory Require Import edone finite_quotient preliminaries bij equiv.
 From GraphTheory Require Import setoid_bigop structures pttdom mgraph mgraph2 rewriting.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

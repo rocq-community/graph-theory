@@ -8,6 +8,7 @@ From GraphTheory Require Import setoid_bigop structures pttdom rewriting.
 From GraphTheory Require Import finmap_plus.
 Open Scope fset_scope.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

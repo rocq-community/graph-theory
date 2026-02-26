@@ -3,6 +3,7 @@ From fourcolor Require Import hypermap geometry.
 From GraphTheory Require Import preliminaries digraph sgraph.
 From GraphTheory Require Import hmap_ops embedding.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

@@ -5,6 +5,7 @@ From GraphTheory Require Import edone finite_quotient bij preliminaries.
 From GraphTheory Require Import digraph sgraph treewidth minor checkpoint.
 From GraphTheory Require Import setoid_bigop structures mgraph mgraph2.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.
