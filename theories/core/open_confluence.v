@@ -545,7 +545,7 @@ Qed.
 Lemma edges_at_add_edge (G : pre_graph) x y e u : 
   edges_at (G ∔ [e, x, u, y]) y = e |` edges_at G y.
 Proof.
-  apply/fsetP => e0. rewrite inE !edges_atE /= !inE. 
+  apply/fsetP => e0. rewrite [in RHS]inE !edges_atE /= !inE.
   case: (altP (e0 =P e)) => //= [->|e0De].
   - rewrite /incident/=. existsb true. by rewrite !update_eq. 
   - rewrite /incident/=. by rewrite !existsb_case !updateE.
@@ -554,7 +554,7 @@ Qed.
 Lemma edges_at_add_edgeL (G : pre_graph) x y e u : 
   edges_at (G ∔ [e, x, u, y]) x = e |` edges_at G x.
 Proof.
-  apply/fsetP => e0. rewrite inE !edges_atE /= !inE. 
+  apply/fsetP => e0. rewrite [in RHS]inE !edges_atE /= !inE.
   case: (altP (e0 =P e)) => //= [->|e0De].
   - rewrite /incident/=. existsb false. by rewrite !update_eq. 
   - rewrite /incident/=. by rewrite !existsb_case !updateE.
