@@ -4,6 +4,7 @@ From GraphTheory Require Import edone preliminaries digraph sgraph.
 From fourcolor Require Import hypermap geometry jordan color coloring combinatorial4ct.
 From GraphTheory Require Import hmap_ops.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

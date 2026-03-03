@@ -2,6 +2,7 @@ From mathcomp Require Import all_ssreflect.
 From GraphTheory Require Import preliminaries bij digraph.
 From GraphTheory Require Import sgraph dom partition.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

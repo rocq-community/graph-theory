@@ -3,6 +3,7 @@ From Coq Require Import Setoid Morphisms.
 From mathcomp Require Import all_ssreflect.
 From GraphTheory Require Import edone preliminaries setoid_bigop structures.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.

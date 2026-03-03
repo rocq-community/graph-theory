@@ -7,6 +7,7 @@ From GraphTheory Require Import digraph sgraph minor checkpoint cp_minor.
 From GraphTheory Require Import setoid_bigop structures pttdom ptt.
 From GraphTheory Require Import mgraph mgraph2 skeleton bounded.
 
+Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)
 Set Implicit Arguments.
 Unset Strict Implicit.
 Unset Printing Implicit Defensive.
