@@ -43,7 +43,7 @@ Notation "1"  := (one): pttdom_ops.
 
 (* 2pdom axioms *)
 
-HB.mixin Record Pttdom_of_Ops A of Ops_of_Type A & Setoid_of_Type A := 
+HB.mixin Record Pttdom_of_Ops A & Ops_of_Type A & Setoid_of_Type A :=
   { dot_eqv: Proper (eqv ==> eqv ==> eqv) (dot : A -> A -> A);
     par_eqv: Proper (eqv ==> eqv ==> eqv) (par : A -> A -> A);
     cnv_eqv: Proper (eqv ==> eqv) (cnv : A -> A);
@@ -104,10 +104,10 @@ Section derived.
    - by rewrite -E -{1}cnv1 -A10 dotx1 parC.
  Qed.
 
- Lemma domtst a of is_test a : dom a ≡ a. 
+ Lemma domtst a & is_test a : dom a ≡ a.
  Proof. exact: testE. Qed.
 
- Lemma tstpar1 a of is_test a :  a ∥ 1 ≡ a.
+ Lemma tstpar1 a & is_test a :  a ∥ 1 ≡ a.
  Proof. by apply/is_test_alt; rewrite domtst. Qed.
 
  Lemma one_test: is_test (1:X). 
@@ -118,38 +118,38 @@ Section derived.
  Proof. constructor. by rewrite -{1}[dom x]dot1x -A13 dot1x. Qed.
  Global Existing Instance dom_test.
  
- Lemma par_test a u of is_test a : is_test (a∥u).
+ Lemma par_test a u & is_test a : is_test (a∥u).
  Proof.
    constructor; apply/is_test_alt.
    by rewrite -parA (parC u) parA tstpar1. 
  Qed.
  Global Existing Instance par_test.
 
- Lemma cnvtst a of is_test a : a° ≡ a.
+ Lemma cnvtst a & is_test a : a° ≡ a.
  Proof. 
    rewrite -[a]tstpar1 cnvpar cnv1 -(dot1x (a°)) parC A10 cnvI parC.
    apply: domtst.
  Qed.
 
- Lemma cnv_test a of is_test a : is_test (a°).
+ Lemma cnv_test a & is_test a : is_test (a°).
  Proof. constructor. by rewrite is_test_alt cnvtst tstpar1. Qed.
  Global Existing Instance cnv_test.
 
- Lemma tstpar a x y of is_test a : a·(x∥y) ≡ a·x ∥ y.
+ Lemma tstpar a x y & is_test a : a·(x∥y) ≡ a·x ∥ y.
  Proof. rewrite -[a]domtst. apply A14. Qed.
 
- Lemma tstpar_r a x y of is_test a : a·(x∥y) ≡ x ∥ a·y.
+ Lemma tstpar_r a x y & is_test a : a·(x∥y) ≡ x ∥ a·y.
  Proof. by rewrite parC tstpar parC. Qed.
 
- Lemma pardot a b of is_test a & is_test b : a ∥ b ≡ a·b.
+ Lemma pardot a b & is_test a & is_test b : a ∥ b ≡ a·b.
  Proof.
    by rewrite -{2}(@tstpar1 b) (parC _ 1) tstpar dotx1.
  Qed.
  
- Lemma dotC a b of is_test a & is_test b : a·b ≡ b·a.
+ Lemma dotC a b & is_test a & is_test b : a·b ≡ b·a.
  Proof. by rewrite -pardot parC pardot. Qed.
 
- Lemma dot_test a b of is_test a & is_test b : is_test (a·b).
+ Lemma dot_test a b & is_test a & is_test b : is_test (a·b).
  Proof. constructor. rewrite -pardot. apply: domtst. Qed.
  Global Existing Instance dot_test.
  
@@ -169,9 +169,9 @@ Section derived.
  HB.instance Definition pttdom_test_setoid := 
    Setoid_of_Type.Build test eqv_test_equiv.
 
- Lemma infer_testE a of is_test a : elem_of [a] ≡ a. 
+ Lemma infer_testE a & is_test a : elem_of [a] ≡ a.
  Proof. by []. Qed.
- Lemma eqv_testE a b of is_test a & is_test b : [a] ≡ [b] <-> a ≡ b.
+ Lemma eqv_testE a b & is_test a & is_test b : [a] ≡ [b] <-> a ≡ b.
  Proof. by []. Qed.
 
  Section M.
@@ -220,20 +220,20 @@ Section derived.
  
  (** ** other derivable laws used in the completeness proof *)
  
- Lemma partst u v a of is_test a : (u ∥ v)·a ≡ u ∥ v·a.
+ Lemma partst u v a & is_test a : (u ∥ v)·a ≡ u ∥ v·a.
  Proof.
    apply cnv_inj. rewrite cnvdot 2!cnvpar cnvdot.
    by rewrite parC tstpar parC.
  Qed.
  
- Lemma par_tst_cnv a u of is_test a : a ∥ u° ≡ a ∥ u.
+ Lemma par_tst_cnv a u & is_test a : a ∥ u° ≡ a ∥ u.
  Proof. by rewrite -[a∥u°]cnvtst cnvpar cnvtst cnvI. Qed.
  
- Lemma eqvb_par1 a u v (b : bool) of is_test a : u ≡[b] v -> a ∥ u ≡ a ∥ v.
+ Lemma eqvb_par1 a u v (b : bool) & is_test a : u ≡[b] v -> a ∥ u ≡ a ∥ v.
  Proof. case: b => [->|-> //]. exact: par_tst_cnv. Qed.
  
  (* used twice in reduce in reduction.v *)
- Lemma reduce_shuffle v a c d of is_test a & is_test c & is_test d :
+ Lemma reduce_shuffle v a c d & is_test a & is_test c & is_test d :
    c·(d·a)·(1∥v) ≡ a ∥ c·v·d.
  Proof.
    rewrite -!dotA -tstpar_r; apply: dot_eqv => //.
@@ -241,7 +241,7 @@ Section derived.
  Qed.
  
  (* lemma for nt_correct *)
- Lemma par_nontest u v a b c d of is_test a & is_test b & is_test c & is_test d :
+ Lemma par_nontest u v a b c d & is_test a & is_test b & is_test c & is_test d :
    a·u·b∥c·v·d ≡ (a·c)·(u∥v)·(b·d).
  Proof. by rewrite -partst -[a·u·b]dotA -tstpar parC -tstpar -partst !dotA parC. Qed.
  

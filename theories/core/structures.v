@@ -67,7 +67,7 @@ Record labels :=
 Global Existing Instance lv_monoid. 
 *)
 
-HB.mixin Record ComMonoid_of_Setoid A of Setoid_of_Type A := 
+HB.mixin Record ComMonoid_of_Setoid A & Setoid_of_Type A :=
   { cm_id : A;
     cm_op : A -> A -> A;
     cm_laws : comMonoidLaws cm_id cm_op }.
@@ -86,7 +86,7 @@ Notation "1" := cm_id : cm_scope.
     - eqv' x y = eqv x y° (when we have an involution _°)
    - eqv' _ _ = False    (otherwise) *)
 
-HB.mixin Record Elabel_of_Setoid A of Setoid_of_Type A := 
+HB.mixin Record Elabel_of_Setoid A & Setoid_of_Type A :=
   { eqv': Relation_Definitions.relation A;
     Eqv'_sym: Symmetric eqv';
     eqv01: forall x y z : A, eqv  x y -> eqv' y z -> eqv' x z;
