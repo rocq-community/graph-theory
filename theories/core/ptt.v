@@ -18,14 +18,14 @@ interpreted appropriately. We also provide a factory where the laws
 for [dom], (i.e., [A13] and [A14]) can be omitted, as they are
 derivable *)
 
-HB.mixin Record Ptt_of_Pttdom A of Pttdom A := 
+HB.mixin Record Ptt_of_Pttdom A & Pttdom A :=
   { A11: forall x: A, x · top ≡ dom x · top;
     A12: forall x y: A, (x∥1) · y ≡ (x∥1)·top ∥ y;
     domE: forall x: A, dom x ≡ 1 ∥ x·top }.
 HB.structure Definition Ptt := { A of Ptt_of_Pttdom A & }.
 Notation ptt := Ptt.type.
 
-HB.factory Record Ptt_of_Ops A of Ops_of_Type A & Setoid_of_Type A :=
+HB.factory Record Ptt_of_Ops A & Ops_of_Type A & Setoid_of_Type A :=
   { dot_eqv: Proper (eqv ==> eqv ==> eqv) (dot : A -> A -> A);
     par_eqv: Proper (eqv ==> eqv ==> eqv) (par : A -> A -> A);
     cnv_eqv: Proper (eqv ==> eqv) (cnv : A -> A);

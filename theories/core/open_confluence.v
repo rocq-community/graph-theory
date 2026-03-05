@@ -947,7 +947,7 @@ Proof.
   - by rewrite eqxx orbT eq_sym E3 eq_sym E2.
 Qed.
 
-Lemma critical_pair1 (u v a : tm) of is_test a : dom ((u∥v°)·a) ≡ 1 ∥ u·a·v. 
+Lemma critical_pair1 (u v a : tm) & is_test a : dom ((u∥v°)·a) ≡ 1 ∥ u·a·v.
 Proof. by rewrite -dotA A10 cnvdot cnvtst partst. Qed. 
 
 Lemma critical_pair2 (u v : tm) : (1∥u)·(1∥v) ≡ 1∥(u∥v).
@@ -956,7 +956,7 @@ Proof.
   by rewrite parA [_∥1]parC !parA par11. 
 Qed. 
 
-Lemma critical_pair3 (u u' a b : tm) of is_test a & is_test b :
+Lemma critical_pair3 (u u' a b : tm) & is_test a & is_test b :
   dom (u'·(dom (u·a)·b)) ≡ dom (u'·b·u·a).
 by rewrite dotC /= dotA -A13 !dotA.
 Qed.
