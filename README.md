@@ -47,7 +47,7 @@ axiomatization of graph isomorphism).
   - Christian Doczkal ([**@chdoc**](https://github.com/chdoc))
   - Damien Pous ([**@damien-pous**](https://github.com/damien-pous))
 - License: [CeCILL-B](LICENSE)
-- Compatible Coq versions: 8.18 or later
+- Compatible Coq versions: 8.19 or later
 - Additional dependencies:
   - MathComp's [SSReflect library](https://math-comp.github.io), version 2.1.0 or later
   - MathComp's [Algebra library](https://math-comp.github.io)
