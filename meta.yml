@@ -64,8 +64,8 @@ license:
   identifier: CECILL-B
 
 supported_coq_versions:
-  text: 8.18 or later
-  opam: '{>= "8.18"}'
+  text: 8.19 or later
+  opam: '{>= "8.19"}'
 
 tested_coq_opam_versions:
 - version: 'rocq-prover-dev'
@@ -73,10 +73,6 @@ tested_coq_opam_versions:
 - version: '2.2.0-coq-8.20'
   repo: 'mathcomp/mathcomp'
 - version: '2.2.0-coq-8.19'
-  repo: 'mathcomp/mathcomp'
-- version: '2.2.0-coq-8.18'
-  repo: 'mathcomp/mathcomp'
-- version: '2.1.0-coq-8.18'
   repo: 'mathcomp/mathcomp'
 
 ci_cron_schedule: '25 5 * * 5'

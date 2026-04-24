@@ -26,7 +26,7 @@ Notation CProper := CMorphisms.Proper.
 Declare Scope csignature.
 Delimit Scope csignature with C.
 Notation "A ==> B" := (@CMorphisms.respectful _ _ (A%C) (B%C)) : csignature.
-Arguments CMorphisms.Proper [A] _%C _.
+Arguments CMorphisms.Proper [A] _%_C _.
 
 Section CProper.
 Variables A B C: Type.
