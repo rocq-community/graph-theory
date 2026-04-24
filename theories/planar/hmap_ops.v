@@ -219,7 +219,7 @@ Lemma hiso_id_glink (D : finType) e n f eK e' n' f' eK' :
 Proof. 
 move => G G' i iE x z. by rewrite (hiso_glink i) !iE.
 Qed.
-Arguments hiso_id_glink [D] [e n f]%function_scope [eK] [e' n' f']%function_scope [eK'].
+Arguments hiso_id_glink [D] [e n f]%_function_scope [eK] [e' n' f']%_function_scope [eK'].
 
 (** ** Operations on Hypermaps *)
 
