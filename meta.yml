@@ -70,9 +70,11 @@ supported_coq_versions:
 tested_coq_opam_versions:
 - version: 'rocq-prover-dev'
   repo: 'mathcomp/mathcomp-dev'
-- version: '2.2.0-coq-8.20'
+- version: '2.5.0-coq-8.20'
   repo: 'mathcomp/mathcomp'
-- version: '2.2.0-coq-8.19'
+- version: '2.5.0-rocq-prover-9.0'
+  repo: 'mathcomp/mathcomp'
+- version: '2.5.0-rocq-prover-9.1'
   repo: 'mathcomp/mathcomp'
 
 ci_cron_schedule: '25 5 * * 5'
@@ -80,8 +82,8 @@ ci_cron_schedule: '25 5 * * 5'
 dependencies:
 - opam:
     name: coq-mathcomp-ssreflect
-    version: '{>= "2.1.0"}'
-  description: MathComp's [SSReflect library](https://math-comp.github.io), version 2.1.0 or later
+    version: '{>= "2.5.0"}'
+  description: MathComp's [SSReflect library](https://math-comp.github.io), version 2.5.0 or later
 - opam:
     name: coq-mathcomp-algebra
   description: MathComp's [Algebra library](https://math-comp.github.io)
