@@ -1,6 +1,6 @@
 From Coq Require Import RelationClasses.
 
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone preliminaries digraph sgraph.
 From GraphTheory Require Import connectivity set_tac.
 

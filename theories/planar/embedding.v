@@ -1,4 +1,4 @@
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From fourcolor Require Import hypermap geometry color coloring walkup combinatorial4ct cfmap.
 From GraphTheory Require Import edone preliminaries bij digraph sgraph.
 From GraphTheory Require Import connectivity minor hmap_ops smerge hcycle arc.

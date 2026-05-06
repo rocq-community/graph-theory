@@ -1,7 +1,7 @@
 From HB Require Import structures.
 From Coq Require Import Setoid CMorphisms.
 From Coq Require Relation_Definitions.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone preliminaries bij.
 
 Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)

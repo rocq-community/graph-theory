@@ -1,4 +1,4 @@
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 
 From GraphTheory Require Import edone preliminaries digraph sgraph minor.
 From GraphTheory Require Import checkpoint connectivity excluded set_tac.

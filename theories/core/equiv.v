@@ -1,5 +1,5 @@
 From Coq Require Import RelationClasses Setoid Morphisms List.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import preliminaries bij finite_quotient.
 
 Set SsrOldRewriteGoalsOrder.  (* change Set to Unset when porting the file, then remove the line when requiring MathComp >= 2.6 *)

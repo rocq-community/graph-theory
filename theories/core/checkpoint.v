@@ -1,4 +1,4 @@
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone preliminaries digraph.
 From GraphTheory Require Import sgraph connectivity.
 

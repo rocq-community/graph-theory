@@ -18,7 +18,7 @@ depends: [
   "dune" {>= "3.5"}
   "coq" {>= "8.19"}
   "coq-mathcomp-ssreflect" {>= "2.5.0"}
-  "coq-mathcomp-algebra-tactics"
+  ("coq-mathcomp-algebra" {>= "2.6.0"} | "coq-mathcomp-algebra-tactics")
   "coq-graph-theory" {= version}
   "coq-fourcolor"
 ]

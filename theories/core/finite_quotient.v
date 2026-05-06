@@ -1,6 +1,6 @@
 From HB Require Import structures.
 From Coq Require Import Setoid CMorphisms.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import preliminaries bij.
 Local Open Scope quotient_scope.
 

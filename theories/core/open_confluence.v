@@ -1,6 +1,6 @@
 From HB Require Import structures.
 From Coq Require Import Relation_Definitions Morphisms RelationClasses.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 
 From GraphTheory Require Import edone finite_quotient preliminaries bij equiv.
 From GraphTheory Require Import setoid_bigop structures pttdom rewriting.

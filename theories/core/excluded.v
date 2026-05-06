@@ -1,5 +1,5 @@
 From Coq Require Import Setoid Morphisms.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 (* Note: ssrbool is empty and shadows Coq.ssr.ssrbool, use Coq.ssrbool for "Find" *)
 
 From GraphTheory Require Import edone preliminaries set_tac digraph.

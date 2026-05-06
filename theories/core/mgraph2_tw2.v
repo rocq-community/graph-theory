@@ -1,5 +1,5 @@
 From Coq Require Import RelationClasses Setoid.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone set_tac finite_quotient preliminaries.
 From GraphTheory Require Import digraph sgraph treewidth minor equiv setoid_bigop.
 From GraphTheory Require Import structures mgraph pttdom ptt mgraph2 skeleton.

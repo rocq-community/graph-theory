@@ -1,5 +1,5 @@
 From HB Require Import structures.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone preliminaries bij digraph.
 From GraphTheory Require Import sgraph connectivity minor excluded.
 From fourcolor Require Import hypermap geometry walkup color coloring combinatorial4ct.
