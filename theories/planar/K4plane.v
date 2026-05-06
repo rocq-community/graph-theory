@@ -1,4 +1,4 @@
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From fourcolor Require Import hypermap geometry.
 From GraphTheory Require Import preliminaries digraph sgraph.
 From GraphTheory Require Import hmap_ops embedding.

@@ -1,6 +1,6 @@
 From Coq Require Import RelationClasses Morphisms Setoid.
 
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 
 From GraphTheory Require Import edone finite_quotient preliminaries.
 From GraphTheory Require Import bij set_tac digraph sgraph minor checkpoint.

@@ -1,6 +1,6 @@
 From Coq Require Import Setoid Morphisms.
 
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone finite_quotient bij preliminaries.
 From GraphTheory Require Import digraph sgraph treewidth minor checkpoint.
 From GraphTheory Require Import setoid_bigop structures mgraph mgraph2.

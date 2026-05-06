@@ -1,5 +1,5 @@
 From Coq Require Import Setoid Morphisms Wf_nat.
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import edone preliminaries bij.
 From GraphTheory Require Import setoid_bigop structures mgraph pttdom mgraph2.
 From GraphTheory Require Import rewriting reduction open_confluence transfer.

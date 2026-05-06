@@ -1,4 +1,4 @@
-From mathcomp Require Import all_ssreflect.
+From mathcomp Require Import all_boot.
 From GraphTheory Require Import preliminaries bij digraph sgraph.
 From GraphTheory Require Import dom partition coloring.
 
