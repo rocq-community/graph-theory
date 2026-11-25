@@ -4,6 +4,8 @@
 -arg -w -arg -duplicate-clear
 -arg -w -arg -elpi.add-const-for-axiom-or-sectionvar
 -arg -w -arg -ambiguous-paths
+# to handle when requiring Rocq >= 9.3
+-arg -w -arg -rewrite-rw
 
 -Q theories GraphTheory
 

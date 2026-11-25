@@ -117,7 +117,7 @@ rewrite /g; split.
   by rewrite vEy (disjointFr (P3 _ _ jDk)) in v_phi_k.
 - move=> j k jk; have [i_jk|] := boolP (i \in [set j; k]); last first.
   { rewrite !inE negb_or ![i == _]eq_sym => /andP[A B].
-    rewrite !updateE // neighbor_del_edge2 // ?P4 //.
+    rewrite !updateE // (@neighbor_del_edge2 G x y) // ?P4 //.
     all: by rewrite ?(disjointFl (P3 _ _ A)) ?(disjointFl (P3 _ _ B)). }
   wlog ?: j k jk {i_jk} / i = j => [W|]; last subst j.
     case/set2P : i_jk; first exact: W.
